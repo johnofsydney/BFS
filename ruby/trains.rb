@@ -26,7 +26,7 @@ def shortest_path start, destination, node_map
   # first - declare some variables for this function
   queue = [start] # queue is a list of stations to examine
   list = []       # stores the list of stations examined.
-  trip = []       # array of the trip taken.
+  trip = []       # array of the trip taken - we won't use this until shortest path
 
   while queue.length > 0
     ####################################
