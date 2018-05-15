@@ -29,6 +29,10 @@ def shortest_path start, destination, node_map
   trip = []       # array of the trip taken.
 
   while queue.length > 0
+    ####################################
+    ## This is the Breadth First part ##
+    ####################################
+
     station_to_examine = queue.shift
     # remove queue[0] from [queue] and assign it to a variable.
 
@@ -54,9 +58,13 @@ def shortest_path start, destination, node_map
 
   end # end of while queue.length > 0 # we are finished.
 
-  # p list
 
   while list.length > 0
+    #################################
+    ## This is the part where we   ##
+    ## construct the shortest path ##
+    #################################
+
     current_stop = list.pop
     trip.push current_stop
 
@@ -72,9 +80,8 @@ def shortest_path start, destination, node_map
 
     #now remove all elements after station_we_came_from
     list = list.take( index + 1 )
-    # list.take is not destructive, but we re-assign list anyway.
-    # list.pop(list.length - (index + 1))
-    # alternative method
+    # aka - list.pop(list.length - (index + 1))
+
 
   end
 
