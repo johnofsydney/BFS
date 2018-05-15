@@ -26,7 +26,7 @@ def shortest_path start, destination, node_map
   # first - declare some variables for this function
   queue = [start] # queue is a list of stations to examine
   list = []       # stores the list of stations examined.
-  trip = []       # array of the trip taken - we won't use this until shortest path
+  trip = []       # array of the trip taken - we won't use this until shortest pat
 
   while queue.length > 0
     ####################################
@@ -40,7 +40,7 @@ def shortest_path start, destination, node_map
     # add station_to_examine to [list] of examined stations
     # aka list.push(station_to_examine)
 
-    children = @stations[station_to_examine]
+    children = node_map[station_to_examine]
     # get the children of the current station.
 
     queue = queue | children
@@ -72,7 +72,7 @@ def shortest_path start, destination, node_map
       break
     end
 
-    stop_children = @stations[current_stop]
+    stop_children = node_map[current_stop]
 
     # Now to find which of it's children appear first in [list]
     station_we_came_from = ( list & stop_children ).first
