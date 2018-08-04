@@ -72,4 +72,4 @@ def shortest_path start, destination, node_map
 end
 
 
-p shortest_path "Strathfield", "Liverpool", @stations
+p shortest_path "Strathfield", "Brooklyn", @stations
