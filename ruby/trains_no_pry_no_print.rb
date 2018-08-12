@@ -19,8 +19,8 @@ require "pry"
   'Epping' => ['Hornsby', 'Chatswood', 'Strathfield'],
   'Chatswood' => ['Hornsby', 'Epping', 'Central'],
   'Strathfield' => ['Lidcombe', 'Epping', 'Central'],
-  'Bankstown' => ['Sydneham', 'Liverpool', 'Lidcombe'],
-  'Liverpool' => ['Blacktown', 'Bankstown', 'Lidcombe', 'Campbelltown'],
+  'Bankstown' => ['Sydneham', 'Liverpool','Lidcombe'],
+  'Liverpool' => ['Blacktown', 'Bankstown','Lidcombe', 'Campbelltown'],
   'Sydneham' => ['Campbelltown', 'Bankstown','Central'],
   'Central' => ['Chatswood', 'Strathfield', 'Sydneham'],
   'Brooklyn' => ['Hornsby'],
@@ -98,8 +98,8 @@ require "pry"
   'Bono' => ['The Edge'],
   'Freddie Mercury' => ['David Bowie'],
   'Mick Jagger' => ['David Bowie'],
-  'Lou Reed' => ['James Hetfield', 'David Bowie'],
-  'James Hetfield' => ['Lou Reed'],
+  'Lou Reed' => ['Metallica', 'David Bowie'],
+  'Metallica' => ['Lou Reed'],
   'Iggy Pop' => ['David Bowie'],
   'David Gilmour' => ['David Bowie'],
   'Tony Bennet' => ['Stevie Wonder', 'Lady Gaga', 'Frank Sinatra'],
@@ -159,22 +159,9 @@ def shortest_path start, destination, node_map
      # is this the destination? if yes, break out of this loop
      # leave this at the end of the loop, so queue list etc are acted upon.
      # this finishes the BFS part, now to reconstruct the [trip] from [list]
-     print "(start: ", start, ")\n"
-     print "(destination: ", destination, ")\n"
-     print "station_to_examine: ", station_to_examine, "\n"
-     print "children: ", children, "\n"
-     print "queue: ", queue, "\n"
-     print "list: ", list, "\n"
-     binding.pry
+
   end # end of while queue.length > 0 # we are finished.
 
-  print "(start: ", start, ")\n"
-  print "(destination: ", destination, ")\n"
-  print "station_to_examine: ", station_to_examine, "\n"
-  print "children: ", children, "\n"
-  print "queue: ", queue, "\n"
-  print "list: ", list, "\n"
-  binding.pry
 
   while list.length > 0
     #################################
@@ -200,69 +187,28 @@ def shortest_path start, destination, node_map
     # aka - list.pop(list.length - (index + 1))
 
 
-    print "current_stop: ", current_stop, "\n"
-    print "station_we_came_from: ", station_we_came_from, "\n"
-    print "list: ", list, "\n"
-    print "trip: ", trip, "\n"
-
-    binding.pry
   end
 
   trip.reverse
 end
-
-p shortest_path "Grand Central", "Times Square", @mta
-p shortest_path "Penrith", "Brooklyn", @sydney
-p shortest_path "Epping", "Liverpool", @sydney
-
-
-
-
-
-
-
-
-
-
-
-
+#
+# p shortest_path "Grand Central", "Times Square", @mta
+# p shortest_path "Penrith", "Brooklyn", @sydney
+# p shortest_path "Epping", "Liverpool", @sydney
+#
+#
+#
+#
+#
 # p shortest_path "Bank", "South Kensington", @london
 # p shortest_path "Green Park", "Moorgate", @london
+#
+#
 
 
 
+p shortest_path "Ozzy Osbourne", "Frank Sinatra", @musicians
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# p shortest_path "Lady Gaga", "James Hetfield", @musicians
-# p shortest_path "Ozzy Osbourne", "Frank Sinatra", @musicians
+# p shortest_path "Lady Gaga", "Metallica", @musicians
+p shortest_path "Freddie Mercury", "Morrisey", @musicians
+p shortest_path "Kylie Minogue", "Bono", @musicians
