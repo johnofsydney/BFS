@@ -2,17 +2,6 @@ require "pry"
 
 
 
-@mta = {
-  'Times Square' => ['Union Square'],
-  'Grand Central' => ['Union Square'],
-  '8th (N)' => ['Union Square'],
-  '8th (L)' => ['Union Square'],
-  'Astor Place' => ['Union Square'],
-  '1st' => ['Union Square'],
-  'Union Square' => ['Times Square', 'Grand Central', '8th (L)', '8th (N)', 'Astor Place', '1st']
-}
-
-
 
 @sydney = {
   'Hornsby' => ['Epping', 'Chatswood', 'Brooklyn'],
@@ -31,96 +20,6 @@ require "pry"
   'Penrith' => ['Blacktown']
 } # end of stations hash
 #
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@london = {
-  'Paddington' => ['Baker Street', 'Notting Hill Gate'],
-  'Baker Street' => ['Paddington', 'Bond Street', 'Kings Cross St Pancras'],
-  'Warren Street' => ['Oxford Circus', 'Tottenham Court Road'],
-  'Kings Cross St Pancras' => ['Baker Street', 'Moorgate', 'Holborn'],
-  'Moorgate' => ['Kings Cross St Pancras', 'Bank'],
-  'Notting Hill Gate' => ['Paddington', 'South Kensington', 'Bond Street'],
-  'Bond Street' => ['Baker Street', 'Notting Hill Gate', 'Green Park', 'Oxford Circus'],
-  'Oxford Circus' => ['Bond Street', 'Baker Street', 'Warren Street', 'Tottenham Court Road', 'Piccadilly Circus', 'Green Park'],
-  'Tottenham Court Road' => ['Oxford Circus', 'Warren Street', 'Holborn', 'Leicester Square'],
-  'Holborn' => ['Tottenham Court Road', 'Kings Cross St Pancras', 'Bank', 'Leicester Square'],
-  'Bank' => ['Holborn', 'Moorgate', 'Embankment'],
-  'South Kensington' => ['Notting Hill Gate', 'Green Park', 'Victoria'],
-  'Victoria' => ['South Kensington', 'Green Park', 'Westminster'],
-  'Westminster' => ['Victoria', 'Green Park', 'Embankment'],
-  'Embankment' => ['Westminster', 'Charing Cross', 'Bank'],
-  'Green Park' => ['Bond Street', 'Oxford Circus', 'Piccadilly Circus', 'Westminster', 'Victoria', 'South Kensington'],
-  'Piccadilly Circus' => ['Oxford Circus', 'Leicester Square', 'Charing Cross', 'Green Park'],
-  'Leicester Square' => ['Tottenham Court Road', 'Holborn', 'Charing Cross', 'Piccadilly Circus'],
-  'Charing Cross' => ['Piccadilly Circus', 'Leicester Square', 'Embankment']
-
-}
-
-
-@musicians = {
-  'David Bowie' => ['Freddie Mercury', 'Mick Jagger', 'Lou Reed', 'Iggy Pop', 'Neil Tennant', 'Trent Reznor', 'David Gilmour'],
-  'Johnny Cash' => ['Bob Dylan', 'Trent Reznor', 'Nick Cave', 'The Edge'],
-  'Paul McCartney' => ['George Harrison', 'Eric Clapton', 'Michael Jackson', 'Kanye West'],
-  'George Harrison' => ['Paul McCartney', 'Eric Clapton', 'Roy Orbison', 'Bob Dylan'],
-  'Johnny Marr' => ['Noel Gallagher', 'Morrisey', 'Bernard Sumner', 'Neil Tennant'],
-  'Kanye West' => ['Elton John', 'Paul McCartney', 'Beyonce'],
-  'Eric Clapton' => ['George Harrison', 'Paul McCartney', 'Elton John'],
-  'Elton John' => ['Kanye West', 'Eric Clapton'],
-  'Beyonce' => ['Jack White', 'Lady Gaga', 'Kanye West'],
-  'Lady Gaga' => ['Beyonce', 'Tony Bennet'],
-  'Roy Orbison' => ['George Harrison'],
-  'Noel Gallagher' => ['Johnny Marr'],
-  'Morrisey' => ['Johnny Marr'],
-  'Bernard Sumner' => ['Johnny Marr', 'Neil Tennant', 'Ian Curtis'],
-  'Neil Tennant' => ['David Bowie', 'Johnny Marr', 'Bernard Sumner', 'Dusty Springfield'],
-  'Dusty Springfield' => ['John Paul Jones', 'Neil Tennant'],
-  'John Paul Jones' => ['Dusty Springfield', 'Jimmy Page'],
-  'Michael Jackson' => ['Paul McCartney', 'Eddie Van Halen'],
-  'Eddie Van Halen' => ['Ozzy Osbourne', 'Michael Jackson'],
-  'Ozzy Osbourne' => ['Eddie Van Halen'],
-  'Bob Dylan' => ['Johnny Cash', 'George Harrison'],
-  'Trent Reznor' => ['David Bowie', 'Johnny Cash'],
-  'Nick Cave' => ['Kylie Minogue', 'Johnny Cash'],
-  'The Edge' => ['Johnny Cash', 'Bono'],
-  'Bono' => ['The Edge'],
-  'Freddie Mercury' => ['David Bowie'],
-  'Mick Jagger' => ['David Bowie'],
-  'Lou Reed' => ['James Hetfield', 'David Bowie'],
-  'James Hetfield' => ['Lou Reed'],
-  'Iggy Pop' => ['David Bowie'],
-  'David Gilmour' => ['David Bowie'],
-  'Tony Bennet' => ['Stevie Wonder', 'Lady Gaga', 'Frank Sinatra'],
-  'Stevie Wonder' => ['Tony Bennet'],
-  'Jack White' => ['Beyonce', 'Jimmy Page'],
-  'Jimmy Page' => ['Jack White', 'John Paul Jones'],
-  'Kylie Minogue' => ['Nick Cave'],
-  'Ian Curtis' => ['Bernard Sumner'],
-  'Frank Sinatra' => ['Tony Bennet']
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -211,58 +110,6 @@ def shortest_path start, destination, node_map
   trip.reverse
 end
 
-p shortest_path "Grand Central", "Times Square", @mta
-p shortest_path "Penrith", "Brooklyn", @sydney
+# p shortest_path "Grand Central", "Times Square", @mta
+# p shortest_path "Penrith", "Brooklyn", @sydney
 p shortest_path "Epping", "Liverpool", @sydney
-
-
-
-
-
-
-
-
-
-
-
-
-# p shortest_path "Bank", "South Kensington", @london
-# p shortest_path "Green Park", "Moorgate", @london
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# p shortest_path "Lady Gaga", "James Hetfield", @musicians
-# p shortest_path "Ozzy Osbourne", "Frank Sinatra", @musicians

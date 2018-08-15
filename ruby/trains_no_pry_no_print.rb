@@ -25,8 +25,8 @@ require "pry"
   'Central' => ['Chatswood', 'Strathfield', 'Sydneham'],
   'Brooklyn' => ['Hornsby'],
   'Campbelltown' => ['Liverpool','Sydneham'],
-  'Lidcombe' => ['Liverpool','Bankstown', 'Strathfield'],
-  'Blacktown' => ['Liverpool', 'Penrith', 'Richmond'],
+  'Lidcombe' => ['Liverpool','Bankstown', 'Strathfield', 'Blacktown'],
+  'Blacktown' => ['Liverpool', 'Penrith', 'Richmond', 'Lidcombe'],
   'Richmond' => ['Blacktown'],
   'Penrith' => ['Blacktown']
 } # end of stations hash
@@ -68,6 +68,12 @@ require "pry"
   'Charing Cross' => ['Piccadilly Circus', 'Leicester Square', 'Embankment']
 
 }
+
+
+
+
+
+
 
 
 @musicians = {
@@ -193,22 +199,37 @@ def shortest_path start, destination, node_map
 end
 #
 # p shortest_path "Grand Central", "Times Square", @mta
-# p shortest_path "Penrith", "Brooklyn", @sydney
+p shortest_path "Penrith", "Brooklyn", @sydney
 # p shortest_path "Epping", "Liverpool", @sydney
-#
-#
-#
-#
-#
-# p shortest_path "Bank", "South Kensington", @london
+# # #
+# # #
+# # #
+# # #
+# # #
+
+
+
+
+
+
+
+p shortest_path "Bank", "South Kensington", @london
 # p shortest_path "Green Park", "Moorgate", @london
 #
 #
 
 
 
+
+
+
+
+
+
+
 p shortest_path "Ozzy Osbourne", "Frank Sinatra", @musicians
+p shortest_path "Beyonce", "Bono", @musicians
 
 # p shortest_path "Lady Gaga", "Metallica", @musicians
-p shortest_path "Freddie Mercury", "Morrisey", @musicians
-p shortest_path "Kylie Minogue", "Bono", @musicians
+# p shortest_path "Freddie Mercury", "Morrisey", @musicians
+# p shortest_path "Kylie  Minogue", "Bono", @musicians
